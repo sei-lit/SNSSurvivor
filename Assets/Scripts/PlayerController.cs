@@ -32,11 +32,13 @@ public class PlayerController : MonoBehaviour
     public void Run() {
         isRunning = true;
         playerAnimator.SetBool("isRunning", true);
+        EnemyController.isMoving = true;
     }
 
     public void Stop() {
         isRunning = false;
         playerAnimator.SetBool("isRunning", false);
+        EnemyController.isMoving = false;
     }
 
     //From here, the worst fucking program I've ever seen
