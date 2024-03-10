@@ -9,7 +9,7 @@ public class Player : Chatacter
 
     public Player() {
         hp = 10;
-        lv = 100;
+        lv = 10;
         intelligence = 10;
         assets = 5;
         endurance = 5;

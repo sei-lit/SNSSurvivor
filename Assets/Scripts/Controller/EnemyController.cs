@@ -31,11 +31,13 @@ public class EnemyController : MonoBehaviour
         if(player == null) {Debug.Log("player == null");return;}       
         Debug.Log("PlayerIsAttacking: " + playerController.isAttacking);
         if(!playerController.isAttacking) {
+            enemyAnimator.SetTrigger("Attack");
             player.AddDamage(player.CalculateDamage(enemy.intelligence, enemy.assets));
             Debug.Log("プレイヤーの残りHP: " + player.GetHp());
         }
         if(player.IsDead()) {
-            Destroy(other.gameObject, 2.0f);
+            playerController.playerAnimator.SetTrigger("isDead");
+            // Destroy(other.gameObject, 1.0f);
             Debug.Log("プレイヤーを倒しました");
         }
     }

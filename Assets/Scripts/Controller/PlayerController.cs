@@ -6,7 +6,7 @@ using UnityEngine.TextCore.Text;
 public class PlayerController : MonoBehaviour
 {
     public Player player = new Player();
-    Animator playerAnimator;
+    public Animator playerAnimator;
     bool isRunning = false;
     public bool isAttacking;
     public GameObject[] roads;
