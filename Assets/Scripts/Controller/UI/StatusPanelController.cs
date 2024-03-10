@@ -13,6 +13,7 @@ public class StatusPanelController : MonoBehaviour
     public Text enduranceText;
     public Text reputationText;
     public Text statusPointText;
+    public GameObject levelUpPanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,10 @@ public class StatusPanelController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GetStatus();
+    }
+
+    public void GetStatus() {
         lvText.text = "Lv. " + player.lv.ToString();
         hpText.text = player.finalHp.ToString();
         intelligenceText.text = player.finalIntelligence.ToString();
@@ -29,5 +34,9 @@ public class StatusPanelController : MonoBehaviour
         enduranceText.text = player.finalEndurance.ToString();
         reputationText.text = player.reputation.ToString();
         statusPointText.text = player.statusPoint.ToString();
+    }
+
+    public void OpenLevelUpPanel() {
+        levelUpPanel.SetActive(true);
     }
 }

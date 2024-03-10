@@ -90,6 +90,7 @@ public class PlayerController : MonoBehaviour
         if(enemy.IsDead()) {
             enemyController.enemyAnimator.SetTrigger("Death");
             Destroy(other.gameObject, 1.0f);
+            player.getExp(enemy.exp);
             Debug.Log("敵を倒しました");
         }
     }
