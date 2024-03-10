@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     public Player player = Player.Current;
     public Animator playerAnimator;
+    BoxCollider2D enemyBoxCollider2D;
     bool isRunning = false;
     public bool isAttacking;
     public GameObject[] roads;
@@ -88,6 +89,8 @@ public class PlayerController : MonoBehaviour
             Debug.Log("敵の残りHP: " + enemy.GetHp());
         }
         if(enemy.IsDead()) {
+            enemyBoxCollider2D = enemyController.GetComponent<BoxCollider2D>();
+            enemyBoxCollider2D.enabled = false;
             enemyController.enemyAnimator.SetTrigger("Death");
             Destroy(other.gameObject, 1.0f);
             player.getExp(enemy.exp);

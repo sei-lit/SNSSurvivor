@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
@@ -32,8 +33,10 @@ public class EnemyController : MonoBehaviour
         Debug.Log("PlayerIsAttacking: " + playerController.isAttacking);
         if(!playerController.isAttacking) {
             enemyAnimator.SetTrigger("Attack");
+            playerController.playerAnimator.SetTrigger("getHurt");
+            KnockBack();
             player.AddDamage(player.CalculateDamage(enemy.intelligence, enemy.assets));
-            Debug.Log("プレイヤーの残りHP: " + player.GetHp());
+            player.UpdateStatus();
         }
         if(player.IsDead()) {
             playerController.playerAnimator.SetTrigger("isDead");
@@ -43,9 +46,9 @@ public class EnemyController : MonoBehaviour
     }
 
     public void KnockBack() {
-        isMoving = false;
-        Debug.Log("this.transform.position + Vector3.right * 30: " + this.transform.position + Vector3.right * 30.0f);
-        transform.position = Vector3.MoveTowards(this.transform.position, this.transform.position + Vector3.right * 30.0f, 1.0f);
-        isMoving = true;
+        speed = 0;
+        Debug.Log("this.transform.position + Vector3.right * 30: " + (this.transform.position + Vector3.right * 5.0f));
+        transform.position += Vector3.right * 50.0f;
+        speed = 100;
     }
 }
