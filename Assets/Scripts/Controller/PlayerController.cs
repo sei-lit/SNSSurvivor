@@ -5,7 +5,7 @@ using UnityEngine.TextCore.Text;
 
 public class PlayerController : MonoBehaviour
 {
-    public Player player = new Player();
+    public Player player = Player.Current;
     public Animator playerAnimator;
     bool isRunning = false;
     public bool isAttacking;
@@ -82,7 +82,9 @@ public class PlayerController : MonoBehaviour
         Debug.Log("isAttacking: " + isAttacking);
         if(isAttacking) {
             playerAnimator.SetTrigger("isAttacking");
-            enemy.AddDamage(enemy.CalculateDamage(player.intelligence, player.assets));
+            enemyController.enemyAnimator.SetTrigger("Hit");
+            enemyController.KnockBack();
+            enemy.AddDamage(enemy.CalculateDamage(player.finalIntelligence, player.finalAssets));
             Debug.Log("敵の残りHP: " + enemy.GetHp());
         }
         if(enemy.IsDead()) {

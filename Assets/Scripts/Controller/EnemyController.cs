@@ -19,7 +19,7 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         if(isMoving) {
-            transform.position += new Vector3(-speed * Time.deltaTime, 0, 0);
+            transform.position += Vector3.left * speed * Time.deltaTime;
         }
     }
 
@@ -40,5 +40,12 @@ public class EnemyController : MonoBehaviour
             // Destroy(other.gameObject, 1.0f);
             Debug.Log("プレイヤーを倒しました");
         }
+    }
+
+    public void KnockBack() {
+        isMoving = false;
+        Debug.Log("this.transform.position + Vector3.right * 30: " + this.transform.position + Vector3.right * 30.0f);
+        transform.position = Vector3.MoveTowards(this.transform.position, this.transform.position + Vector3.right * 30.0f, 1.0f);
+        isMoving = true;
     }
 }

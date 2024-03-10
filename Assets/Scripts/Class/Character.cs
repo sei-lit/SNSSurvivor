@@ -11,6 +11,8 @@ public class Chatacter : IDamagable, IAttack
     public float assets;
     public float endurance;
 
+    public int exp;
+
     //IDamagable
     public int CalculateDamage(float intelligence, float assets) {
         return (int)(intelligence * assets / endurance);
