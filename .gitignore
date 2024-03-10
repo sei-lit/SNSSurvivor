@@ -7,6 +7,7 @@
 /[Bb]uild/
 /[Bb]uilds/
 /[Uu]ser[Ss]ettings/
+/[Ll]ogs/
 UnityGenerated/
 /Assets/AssetStoreTools*
 *.pidb.meta

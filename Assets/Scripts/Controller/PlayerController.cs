@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class PlayerController : MonoBehaviour
 {
+    public Player player = new Player();
     Animator playerAnimator;
     bool isRunning = false;
+    public bool isAttacking;
     public GameObject[] roads;
     public GameObject[] backgroundCities;
 
@@ -41,7 +44,7 @@ public class PlayerController : MonoBehaviour
         EnemyController.isMoving = false;
     }
 
-    //From here, the worst fucking program I've ever seen
+    //From here, the fucking worst program I've ever seen
     void MoveRoads() {
         for(int i = 0; i < roads.Length; i++) {
             roads[i].transform.position += new Vector3(-roadSpeed * Time.deltaTime, 0, 0);
@@ -65,6 +68,27 @@ public class PlayerController : MonoBehaviour
             backgroundCities[0].transform.position = new Vector3(800 - 88 + canvasOffset.transform.position.x,  + canvasOffset.transform.position.y, 1);
         } else if(backgroundCities[1].transform.position.x < -720  + canvasOffset.transform.position.x) {
             backgroundCities[1].transform.position = new Vector3(800 - 88 + canvasOffset.transform.position.x,  + canvasOffset.transform.position.y, 1);
+        }
+    }
+    void OnTriggerEnter2D(Collider2D other) {
+        Debug.Log("OnTriggerEnter2D");
+        Debug.Log(other.gameObject.name);
+        var enemyController = other.gameObject.GetComponent<EnemyController>();
+        var enemy = enemyController.enemy;
+        if(enemy == null) {Debug.Log("enemy == null");return;}
+        double percentage = enemy.CalculateGetAttackedPercentage(player.lv);
+        Debug.Log("percentage: " + percentage);
+        isAttacking = enemy.GetAttacked(percentage);
+        Debug.Log("isAttacking: " + isAttacking);
+        if(isAttacking) {
+            playerAnimator.SetTrigger("isAttacking");
+            enemy.AddDamage(enemy.CalculateDamage(player.intelligence, player.assets));
+            Debug.Log("敵の残りHP: " + enemy.GetHp());
+        }
+        if(enemy.IsDead()) {
+            enemyController.enemyAnimator.SetTrigger("Death");
+            Destroy(other.gameObject, 1.0f);
+            Debug.Log("敵を倒しました");
         }
     }
 }
