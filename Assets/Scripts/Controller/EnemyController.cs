@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour
 {
 
     public Enemy enemy = new Enemy();
+    public GameObject gameOverCanvas;
     public static bool isMoving = false;
     public Animator enemyAnimator;
     float speed = 100;
@@ -39,10 +40,22 @@ public class EnemyController : MonoBehaviour
             player.UpdateStatus();
         }
         if(player.IsDead()) {
+            GameStop(playerController);
             playerController.playerAnimator.SetTrigger("isDead");
             // Destroy(other.gameObject, 1.0f);
             Debug.Log("プレイヤーを倒しました");
+            GameOver();
         }
+    }
+
+    void GameOver() {
+        gameOverCanvas.SetActive(true);
+    } 
+
+    void GameStop(PlayerController playerController) {
+        speed = 0;
+        playerController.roadSpeed = 0;
+        playerController.backgroundCitySpeed = 0;
     }
 
     public void KnockBack() {

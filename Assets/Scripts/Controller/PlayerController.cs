@@ -14,8 +14,8 @@ public class PlayerController : MonoBehaviour
     public GameObject[] backgroundCities;
 
     public GameObject canvasOffset;
-    float roadSpeed = 100;
-    float backgroundCitySpeed = 30;
+    public float roadSpeed = 100;
+    public float backgroundCitySpeed = 30;
     // Start is called before the first frame update
     void Start()
     {
