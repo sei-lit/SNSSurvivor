@@ -7,14 +7,21 @@ public class EnemyController : MonoBehaviour
 {
 
     public Enemy enemy = new Enemy();
+    public GameObject enemyCreator;
+    EnemyCreatorController enemyCreatorController;
+    int spwnEnemyNumber;
     public GameObject gameOverCanvas;
     public static bool isMoving = false;
     public Animator enemyAnimator;
-    float speed = 100;
+    float speed = 150;
+    float spwnInterval = 1.0f;    
     // Start is called before the first frame update
     void Start()
     {
         enemyAnimator = this.GetComponent<Animator>();
+        enemyCreatorController = enemyCreator.GetComponent<EnemyCreatorController>();
+        InvokeRepeating("spwnRandomEnemys", 0.0f, spwnInterval);
+        enemy = enemy.CreateEnemy(spwnEnemyNumber);
     }
 
     // Update is called once per frame
@@ -23,6 +30,12 @@ public class EnemyController : MonoBehaviour
         if(isMoving) {
             transform.position += Vector3.left * speed * Time.deltaTime;
         }
+    }
+
+    void spwnRandomEnemys() {
+        Debug.Log("spwnRandomEnemys");
+        spwnEnemyNumber = Random.Range(0, enemy.enemys.Length);
+        enemyCreatorController.spwnEnemy(spwnEnemyNumber);
     }
 
     void OnTriggerEnter2D(Collider2D other) {
