@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     public Player player = Player.Current;
     public Animator playerAnimator;
+    public Slider blowUpSlider;
+    BlowUpSliderController blowUpSliderController;
     BoxCollider2D enemyBoxCollider2D;
     public bool isRunning = false;
     public bool isSNSMode = false;
@@ -20,6 +23,7 @@ public class PlayerController : MonoBehaviour
         playerAnimator = GetComponent<Animator>();
         player.getCurrentStatus();
         player.UpdateStatus();
+        blowUpSliderController = blowUpSlider.GetComponent<BlowUpSliderController>();
     }
 
     // Update is called once per frame
@@ -30,6 +34,7 @@ public class PlayerController : MonoBehaviour
 
     public void ChangeMode() {
         isSNSMode = !isSNSMode;
+        blowUpSliderController.isSNSMode = !blowUpSliderController.isSNSMode;
     }
 
     public void Run() {
@@ -71,6 +76,7 @@ public class PlayerController : MonoBehaviour
             enemyController.enemyAnimator.SetTrigger("Death");
             Destroy(other.gameObject, 1.0f);
             player.getExp(enemy.exp);
+            blowUpSliderController.JumpUpValue();
             Debug.Log("敵を倒しました");
         }
     }
