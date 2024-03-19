@@ -21,14 +21,18 @@ public class BlowUpSliderController : MonoBehaviour
         if(isSNSMode) {
             blowUpValue += 0.02f * Time.deltaTime;
             blowUpSlider.value = blowUpValue;
-        } else {
+        } else if (!isSNSMode && blowUpValue > 0) {
             blowUpValue -= 0.0075f * Time.deltaTime;
             blowUpSlider.value = blowUpValue;
+        } else {
+            blowUpValue = 0;
         }
     }
 
     public void JumpUpValue() {
-        blowUpValue += 0.1f;
-        blowUpSlider.value = blowUpValue;
+        if(isSNSMode) {
+            blowUpValue += 0.1f;
+            blowUpSlider.value = blowUpValue;
+        }
     }
 }

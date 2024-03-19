@@ -10,6 +10,6 @@ public class Pebble : Enemy
         intelligence = 25;
         assets = 10;
         endurance = 10;
-        exp = 50;
+        exp = 10;
     }
 }

@@ -10,6 +10,6 @@ public class Skull : Enemy
         intelligence = 40;
         assets = 25;
         endurance = 40;
-        exp = 60;
+        exp = 12;
     }
 }

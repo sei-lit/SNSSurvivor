@@ -10,6 +10,6 @@ public class Rat : Enemy
         intelligence = 10;
         assets = 10;
         endurance = 10;
-        exp = 10;
+        exp = 3;
     }
 }

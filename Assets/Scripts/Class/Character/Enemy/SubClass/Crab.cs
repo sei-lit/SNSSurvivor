@@ -10,6 +10,6 @@ public class Crab : Enemy
         intelligence = 10;
         assets = 5;
         endurance = 25;
-        exp = 40;
+        exp = 8;
     }
 }

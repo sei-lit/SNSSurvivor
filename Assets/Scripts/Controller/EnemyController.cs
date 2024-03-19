@@ -26,7 +26,7 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other) {
+    void OnTriggerStay2D(Collider2D other) {
         Debug.Log("OnTriggerEnter2D");
         Debug.Log(other.gameObject.name);
         var playerController = other.gameObject.GetComponent<PlayerController>();
@@ -60,7 +60,6 @@ public class EnemyController : MonoBehaviour
 
     public void KnockBack() {
         speed = 0;
-        Debug.Log("this.transform.position + Vector3.right * 30: " + (this.transform.position + Vector3.right * 5.0f));
         transform.position += Vector3.right * 50.0f;
         speed = 100;
     }

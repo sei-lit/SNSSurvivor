@@ -10,6 +10,6 @@ public class Bat : Enemy
         intelligence = 10;
         assets = 5;
         endurance = 8;
-        exp = 30;
+        exp = 6;
     }
 }

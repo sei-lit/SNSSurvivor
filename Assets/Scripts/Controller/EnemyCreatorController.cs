@@ -22,7 +22,7 @@ public class EnemyCreatorController : MonoBehaviour
     public void spwnEnemy() {
         int spwnEnemyNumber = Random.Range(0, prefabsEnemys.Length);
         EnemyController enemyController = prefabsEnemys[spwnEnemyNumber].GetComponent<EnemyController>();
-        Debug.Log("enemyController.debugString" + enemyController.debugString);
+        if(!EnemyController.isMoving) {Debug.Log("Enemy is not moving"); return;}
         switch (spwnedEnemy[spwnEnemyNumber]) {
             case Enemys.bat:
                 enemyController.enemy = new Bat();

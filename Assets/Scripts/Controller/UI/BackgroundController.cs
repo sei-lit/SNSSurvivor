@@ -48,7 +48,6 @@ public class BackgroundController : MonoBehaviour
 
         for(int i = 0; i < roads.Length; i++) {
             if(roads[i].transform.position.x < -720 + canvasOffset.transform.position.x) {
-                Debug.Log(roads[i].transform.position.x);
                 roads[i].transform.position = new Vector3(800 - 88 + canvasOffset.transform.position.x, canvasOffset.transform.position.y, 1);
             }
         }

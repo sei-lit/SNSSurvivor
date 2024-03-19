@@ -10,6 +10,6 @@ public class SpikedSlime : Enemy
         intelligence = 5;
         assets = 5;
         endurance = 5;
-        exp = 10;
+        exp = 2;
     }
 }
