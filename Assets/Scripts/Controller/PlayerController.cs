@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
 
@@ -53,12 +54,11 @@ public class PlayerController : MonoBehaviour
             roads[i].transform.position += new Vector3(-roadSpeed * Time.deltaTime, 0, 0);
         }
 
-        if(roads[0].transform.position.x < -720 + canvasOffset.transform.position.x) {
-            Debug.Log(roads[0].transform.position.x);
-            roads[0].transform.position = new Vector3(800 - 88 + canvasOffset.transform.position.x, canvasOffset.transform.position.y, 1);
-        } else if(roads[1].transform.position.x < -720 + canvasOffset.transform.position.x) {
-            Debug.Log(roads[1].transform.position.x);
-            roads[1].transform.position = new Vector3(800 - 88 + canvasOffset.transform.position.x, canvasOffset.transform.position.y, 1);
+        for(int i = 0; i < roads.Length; i++) {
+            if(roads[i].transform.position.x < -720 + canvasOffset.transform.position.x) {
+                Debug.Log(roads[i].transform.position.x);
+                roads[i].transform.position = new Vector3(800 - 88 + canvasOffset.transform.position.x, canvasOffset.transform.position.y, 1);
+            }
         }
     }
 
@@ -67,11 +67,17 @@ public class PlayerController : MonoBehaviour
             backgroundCities[i].transform.position += new Vector3(-backgroundCitySpeed * Time.deltaTime, 0, 0);
         }
 
-        if(backgroundCities[0].transform.position.x < -720 + canvasOffset.transform.position.x) {
-            backgroundCities[0].transform.position = new Vector3(800 - 88 + canvasOffset.transform.position.x,  + canvasOffset.transform.position.y, 1);
-        } else if(backgroundCities[1].transform.position.x < -720  + canvasOffset.transform.position.x) {
-            backgroundCities[1].transform.position = new Vector3(800 - 88 + canvasOffset.transform.position.x,  + canvasOffset.transform.position.y, 1);
+        for(int i = 0; i < backgroundCities.Length; i++) {
+            if(backgroundCities[i].transform.position.x < -720 + canvasOffset.transform.position.x) {
+                backgroundCities[i].transform.position = new Vector3(800 - 88 + canvasOffset.transform.position.x, canvasOffset.transform.position.y, 1);
+            }
         }
+
+        // if(backgroundCities[0].transform.position.x < -720 + canvasOffset.transform.position.x) {
+        //     backgroundCities[0].transform.position = new Vector3(800 - 88 + canvasOffset.transform.position.x,  + canvasOffset.transform.position.y, 1);
+        // } else if(backgroundCities[1].transform.position.x < -720  + canvasOffset.transform.position.x) {
+        //     backgroundCities[1].transform.position = new Vector3(800 - 88 + canvasOffset.transform.position.x,  + canvasOffset.transform.position.y, 1);
+        // }
     }
     void OnTriggerEnter2D(Collider2D other) {
         Debug.Log("OnTriggerEnter2D");
