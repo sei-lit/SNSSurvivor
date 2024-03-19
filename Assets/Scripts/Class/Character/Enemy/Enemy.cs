@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : Chatacter
 {
-    public Enemy[] enemys = {new Bat(), new Crab(), new Pebble(), new Rat(), new Skull(), new SpikedSlime()};
+    // public Enemy[] enemys = {new Bat(), new Crab(), new Pebble(), new Rat(), new Skull(), new SpikedSlime()};
 
     public Enemy() {
         hp = 7;
@@ -16,6 +16,7 @@ public class Enemy : Chatacter
     }
 
     public Enemy CreateEnemy(int number) {
-        return enemys[number];
+        return null;
+        // return enemys[number];
     }
 }
