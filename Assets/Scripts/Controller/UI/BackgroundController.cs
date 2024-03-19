@@ -8,6 +8,7 @@ public class BackgroundController : MonoBehaviour
     PlayerController playerController;
     public GameObject[] roads;
     public GameObject[] backgroundCities;
+    public GameObject[] snsCityImages;
 
     public GameObject canvasOffset;
     public float roadSpeed = 150;
@@ -24,13 +25,19 @@ public class BackgroundController : MonoBehaviour
         if (playerController.isRunning) {
             MovebackgroundCities();
             MoveRoads();
-        } else {
-            
-        }
+        } 
 
         if (playerController.isDead) {
             roadSpeed = 0;
             backgroundCitySpeed = 0;
+        }
+
+        if (playerController.isSNSMode) {
+            snsCityImages[0].SetActive(true);
+            snsCityImages[1].SetActive(true);
+        } else {
+            snsCityImages[0].SetActive(false);
+            snsCityImages[1].SetActive(false);
         }
     }
 

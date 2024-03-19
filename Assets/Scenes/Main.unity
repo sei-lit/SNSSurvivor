@@ -2718,7 +2718,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 640249733}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1572783229}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: ChangeMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &640249733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4366,6 +4378,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1068928292}
+  - component: {fileID: 1068928293}
   m_Layer: 5
   m_Name: BackgroungImages
   m_TagString: Untagged
@@ -4389,6 +4402,7 @@ RectTransform:
   - {fileID: 223745069}
   - {fileID: 1212368485}
   - {fileID: 1577181892}
+  - {fileID: 1709752125}
   - {fileID: 1607043925}
   - {fileID: 1788270286}
   m_Father: {fileID: 1524055799}
@@ -4398,6 +4412,33 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 93.99997}
   m_SizeDelta: {x: 800, y: 188.00006}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1068928293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068928291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d2f1777b7e914f5ea16a7cfc4f5c7f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1572783225}
+  roads:
+  - {fileID: 1607043924}
+  - {fileID: 1788270285}
+  backgroundCities:
+  - {fileID: 1161493770}
+  - {fileID: 223745066}
+  - {fileID: 1212368484}
+  - {fileID: 1577181891}
+  snsCityImages:
+  - {fileID: 1212368484}
+  - {fileID: 1577181891}
+  canvasOffset: {fileID: 1524055795}
+  roadSpeed: 150
+  backgroundCitySpeed: 40
 --- !u!1 &1105420648
 GameObject:
   m_ObjectHideFlags: 0
@@ -4856,7 +4897,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1212368485
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6150,7 +6191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6376,18 +6417,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAnimator: {fileID: 1572783227}
+  isRunning: 0
+  isSNSMode: 0
   isAttacking: 0
-  roads:
-  - {fileID: 1607043924}
-  - {fileID: 1788270285}
-  backgroundCities:
-  - {fileID: 1161493770}
-  - {fileID: 223745066}
-  - {fileID: 1212368484}
-  - {fileID: 1577181891}
-  canvasOffset: {fileID: 1524055795}
-  roadSpeed: 100
-  backgroundCitySpeed: 30
+  isDead: 0
 --- !u!61 &1572783230
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6477,7 +6510,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1577181892
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7433,6 +7466,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1694909235}
+  m_CullTransparentMesh: 1
+--- !u!1 &1709752124
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1709752125}
+  - component: {fileID: 1709752127}
+  - component: {fileID: 1709752126}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1709752125
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709752124}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1068928292}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -424.34}
+  m_SizeDelta: {x: 800, y: 757.53}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1709752126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709752124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.9176471, g: 0.8745099, b: 0.7490196, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1709752127
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709752124}
   m_CullTransparentMesh: 1
 --- !u!1 &1743999526
 GameObject:

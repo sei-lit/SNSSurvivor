@@ -19,6 +19,7 @@ public class Chatacter : IDamagable, IAttack
     }
     public void AddDamage(int damage)
     {
+        Debug.Log("Damage: " + damage.ToString());
         hp -= damage;
     }
     public bool IsDead() {
