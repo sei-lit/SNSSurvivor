@@ -5,11 +5,11 @@ using UnityEngine;
 public class Crab : Enemy
 {
     public Crab() {
-        hp = 7;
-        lv = 1;
-        intelligence = 5;
+        hp = 20;
+        lv = 4;
+        intelligence = 10;
         assets = 5;
-        endurance = 5;
-        exp = 10;
+        endurance = 25;
+        exp = 40;
     }
 }

@@ -5,11 +5,11 @@ using UnityEngine;
 public class Skull : Enemy
 {
     public Skull() {
-        hp = 7;
-        lv = 1;
-        intelligence = 5;
-        assets = 5;
-        endurance = 5;
-        exp = 10;
+        hp = 50;
+        lv = 6;
+        intelligence = 40;
+        assets = 25;
+        endurance = 40;
+        exp = 60;
     }
 }

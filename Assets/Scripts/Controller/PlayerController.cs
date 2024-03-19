@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
         EnemyController.isMoving = false;
     }
 
-    void OnTriggerEnter2D(Collider2D other) {
+    void OnTriggerStay2D(Collider2D other) {
         Debug.Log("OnTriggerEnter2D");
         Debug.Log(other.gameObject.name);
         var enemyController = other.gameObject.GetComponent<EnemyController>();
