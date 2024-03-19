@@ -55,8 +55,7 @@ public class EnemyController : MonoBehaviour
 
     void GameStop(PlayerController playerController) {
         speed = 0;
-        playerController.roadSpeed = 0;
-        playerController.backgroundCitySpeed = 0;
+        playerController.isDead = true;
     }
 
     public void KnockBack() {
