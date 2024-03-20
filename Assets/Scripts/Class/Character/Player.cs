@@ -14,6 +14,7 @@ public class Player : Chatacter, ILevelUpable
     public float reputation;
     public int statusPoint = 0;
     public int expForNextLv = 10;
+    float distance = 0;
     public Tool tool = Pencil.Current;
     public Body body = UsedOutfit.Current;
     public Accesory accesory;
@@ -70,15 +71,27 @@ public class Player : Chatacter, ILevelUpable
         return (int)Math.Pow((double)currentLv/(double)50, (double)2) + 10;
     }
 
+    public void AddDistance(float addedDistance) {
+        distance += addedDistance;
+    }
+
+    public float GetDistance() {
+        return distance;
+    }
+
+    public void ResetDistance() {
+        distance = 0.0f;
+    }
+
     public void PlusHp() {
         if(statusPoint > 0) {
-            hp++;
+            maxHp++;
             statusPoint--;
         }
     }
     public void MinusHp() {
         if(hp > 1) {
-            hp--;
+            maxHp--;
             statusPoint++;
         }
     }

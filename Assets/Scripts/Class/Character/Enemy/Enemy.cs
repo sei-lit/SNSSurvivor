@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Enemy : Chatacter
 {
-
     public Enemy() {
         hp = 7;
         lv = 1;

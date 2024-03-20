@@ -23,13 +23,16 @@ public class PlayerController : MonoBehaviour
         playerAnimator = GetComponent<Animator>();
         player.getCurrentStatus();
         player.UpdateStatus();
+        player.ResetDistance();
         blowUpSliderController = blowUpSlider.GetComponent<BlowUpSliderController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(isRunning) {
+            player.AddDistance(0.1f * Time.deltaTime);
+        }
     }
 
     public void ChangeMode() {

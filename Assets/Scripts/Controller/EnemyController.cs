@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-
-    public string debugString = "This is EnemyController";
     public Enemy enemy = new Enemy();
     public Canvas gameOverCanvas;
     public static bool isMoving = false;
