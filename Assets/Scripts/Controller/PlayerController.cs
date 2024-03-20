@@ -12,6 +12,11 @@ public class PlayerController : MonoBehaviour
     public Slider blowUpSlider;
     public BlowUpSliderController blowUpSliderController;
     BoxCollider2D enemyBoxCollider2D;
+    [SerializeField] AudioSource playerAudioSource;
+    [SerializeField] AudioSource playerLevelUpAudioSource;
+    [SerializeField] AudioClip attackSE;
+    [SerializeField] AudioClip hurtSE;
+    [SerializeField] AudioClip levelUpSE;
     public bool isRunning = false;
     public bool isSNSMode = false;
     public bool isAttacking;
@@ -73,7 +78,10 @@ public class PlayerController : MonoBehaviour
             } else {
                 enemy.AddDamage(enemy.CalculateDamage(player.finalIntelligence, player.finalAssets));
             }
+            playerAudioSource.PlayOneShot(attackSE);
             Debug.Log("敵の残りHP: " + enemy.GetHp());
+        } else {
+            playerAudioSource.PlayOneShot(hurtSE);
         }
         if(enemy.IsDead()) {
             enemyBoxCollider2D = enemyController.GetComponent<BoxCollider2D>();
@@ -81,6 +89,11 @@ public class PlayerController : MonoBehaviour
             enemyController.enemyAnimator.SetTrigger("Death");
             Destroy(other.gameObject, 1.0f);
             player.getExp(enemy.exp);
+            if(player.CanLevelUp()) {
+                Debug.Log("level up!!");
+                playerLevelUpAudioSource.PlayOneShot(levelUpSE);
+                player.LevelUp();
+            }
             blowUpSliderController.JumpUpValue();
             Debug.Log("敵を倒しました");
         }

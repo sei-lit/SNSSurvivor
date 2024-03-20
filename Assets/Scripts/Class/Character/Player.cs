@@ -60,19 +60,24 @@ public class Player : Chatacter, ILevelUpable
     //ILevelUpable
     public void getExp(int gainExp) {
         exp += gainExp;
-        LevelUp();
     }
 
     public void LevelUp() {
+        exp -= expForNextLv;
+        lv++;
+        statusPoint += 5;
+        expForNextLv = CalculateExpForNextLv(lv);
+    }
+
+    public bool CanLevelUp() {
         if(exp >= expForNextLv) {
-            exp -= expForNextLv;
-            lv++;
-            statusPoint += 5;
-            expForNextLv = CalculateExpForNextLv(lv);
+            return true;
+        } else {
+            return false;
         }
     }
     public int CalculateExpForNextLv(int currentLv) {
-        return (int)Math.Pow((double)currentLv/(double)50, (double)2) + 10;
+        return (int)Math.Pow((double)currentLv/(double)50, (double)2) + 20;
     }
 
     public void AddDistance(float addedDistance) {
