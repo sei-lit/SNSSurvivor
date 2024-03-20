@@ -7,8 +7,8 @@ public class BlowUpSliderController : MonoBehaviour
 {
 
     Slider blowUpSlider;
-
     public GameObject EnemyCreator;
+    public GameObject backgroundAnimation;
     EnemyCreatorController enemyCreatorController;
     public bool isSNSMode = false;
     float blowUpValue = 0;
@@ -46,10 +46,12 @@ public class BlowUpSliderController : MonoBehaviour
 
     public bool GetBlowUp() {
         if (blowUpValue >= 1.0f) {
+            backgroundAnimation.SetActive(true);
             return true;
         } else if (isUnderBlowUp && blowUpValue >= 0.25f) {
             return true;
         } else {
+            backgroundAnimation.SetActive(false);
             return false;
         }
     }
