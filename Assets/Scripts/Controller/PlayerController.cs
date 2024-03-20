@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public Player player = Player.Current;
     public Animator playerAnimator;
     public Slider blowUpSlider;
-    BlowUpSliderController blowUpSliderController;
+    public BlowUpSliderController blowUpSliderController;
     BoxCollider2D enemyBoxCollider2D;
     public bool isRunning = false;
     public bool isSNSMode = false;
@@ -46,7 +46,9 @@ public class PlayerController : MonoBehaviour
     public void Stop() {
         isRunning = false;
         playerAnimator.SetBool("isRunning", false);
-        EnemyController.isMoving = false;
+        if(!blowUpSliderController.IsUnderBlowUp()) {
+            EnemyController.isMoving = false;
+        }
     }
 
     void OnTriggerStay2D(Collider2D other) {

@@ -45,6 +45,7 @@ public class EnemyController : MonoBehaviour
             playerController.playerAnimator.SetTrigger("isDead");
             Debug.Log("プレイヤーを倒しました");
             GameOver();
+            playerController.blowUpSliderController.isUnderBlowUp = false;
         }
     }
 

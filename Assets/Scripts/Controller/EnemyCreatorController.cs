@@ -1,23 +1,56 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyCreatorController : MonoBehaviour
 {
-
+    public Slider blowUpSlider;
+    public BlowUpSliderController blowUpSliderController;
+    float swarmSpwnTimer = 0.0f;
+    float swarmSpwnSpan = 0.75f;
     public GameObject[] prefabsEnemys;
     public Enemys[] spwnedEnemy = {Enemys.bat, Enemys.crab, Enemys.pebble, Enemys.rat, Enemys.skull, Enemys.spikedSlime};
     // Start is called before the first frame update
     void Start()
     {
-       InvokeRepeating("spwnEnemy", 0.0f, 1.0f);
+        blowUpSliderController = blowUpSlider.GetComponent<BlowUpSliderController>();
+       InvokeRepeating("spwnEnemy", 0.0f, 2.0f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(blowUpSliderController.isUnderBlowUp) {
+            EnemySwarm();
+        }
     }
+
+    void EnemySwarm() {
+        EnemyController.isMoving = true;
+        swarmSpwnTimer += Time.deltaTime;
+        if (swarmSpwnTimer > swarmSpwnSpan) {
+            spwnEnemy();
+            swarmSpwnTimer = 0.0f;
+        }
+    }
+
+    // public void StopSwarm() {
+    //     if(IsInvoking()) {
+    //         CancelInvoke();
+    //         InvokeRepeating("spwnEnemy", 0.0f, 2.0f);
+    //     } else {
+    //         Debug.Log("error: Invoke is not working properly in swarm...");
+    //     }
+    // }
+
+    // public void StopSpwn() {
+    //     if(IsInvoking()) {
+    //         CancelInvoke();
+    //     } else {
+    //         Debug.Log("Invoke is not working...");
+    //     }
+    // }
 
     public void spwnEnemy() {
         int spwnEnemyNumber = Random.Range(0, prefabsEnemys.Length);
@@ -49,7 +82,7 @@ public class EnemyCreatorController : MonoBehaviour
                 Instantiate(prefabsEnemys[spwnEnemyNumber], this.transform.position, this.transform.rotation);
                 return;
             default:
-                Debug.Log("Invailed enum...");
+                Debug.Log("error: Invailed enum...");
                 return;
         }
     }
