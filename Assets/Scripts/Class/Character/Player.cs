@@ -2,11 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using UnityEngine;
 
 public class Player : Chatacter, ILevelUpable
 {
-    int maxHp;
+    public int maxHp;
     public int finalHp;
     public float finalIntelligence;
     public float finalAssets;
@@ -20,9 +21,12 @@ public class Player : Chatacter, ILevelUpable
     public Accesory accesory;
     public Watch watch;
     public Shoes shoes = Sneakers.Current;
-
+    public List<Tool> aquiredTool = new List<Tool>();
+    public List<Body> aquiredBody = new List<Body>();
+    public List<Watch> aquiredWatch = new List<Watch>();
+    public List<Accesory> aquiredAccesory = new List<Accesory>();
+    public List<Shoes> aquiredShoes = new List<Shoes>();
     private static Player player = new Player();
-
     public static Player Current => player;
 
     private Player() {
@@ -42,7 +46,7 @@ public class Player : Chatacter, ILevelUpable
     }
 
     private void getCurrentEquipments() {
-        
+        aquiredTool.Add(tool);
     }
 
     public void UpdateStatus() {

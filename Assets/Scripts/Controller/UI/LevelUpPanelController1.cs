@@ -25,7 +25,7 @@ public class LevelUpPanelController : MonoBehaviour
     }
 
     public void GetStatus() {
-        hpText.text = player.hp.ToString();
+        hpText.text = player.maxHp.ToString();
         intelligenceText.text = player.intelligence.ToString();
         assetsText.text = player.assets.ToString();
         enduranceText.text = player.endurance.ToString();
