@@ -54,24 +54,6 @@ public class BlowUpSliderController : MonoBehaviour
         }
     }
 
-    // bool IsReleasedFromBlowUp() {
-    //     if (blowUpValue < 0.25f) {
-    //         return true;
-    //     } else {
-    //         return false;
-    //     }
-    // }
-
-    // void StartSwarm() {
-    //     isUnderBlowUp = true;
-    //     enemyCreatorController.StartSwarm();
-    // }
-
-    // public void StopSwarm() {
-    //     isUnderBlowUp = false;
-    //     enemyCreatorController.StopSwarm();
-    // }
-
     void MaxSliderValue() {
         if (blowUpValue >= 1.0f) {
             blowUpValue = 1.0f;

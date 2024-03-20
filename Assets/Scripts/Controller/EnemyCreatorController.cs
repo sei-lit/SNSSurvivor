@@ -35,23 +35,6 @@ public class EnemyCreatorController : MonoBehaviour
         }
     }
 
-    // public void StopSwarm() {
-    //     if(IsInvoking()) {
-    //         CancelInvoke();
-    //         InvokeRepeating("spwnEnemy", 0.0f, 2.0f);
-    //     } else {
-    //         Debug.Log("error: Invoke is not working properly in swarm...");
-    //     }
-    // }
-
-    // public void StopSpwn() {
-    //     if(IsInvoking()) {
-    //         CancelInvoke();
-    //     } else {
-    //         Debug.Log("Invoke is not working...");
-    //     }
-    // }
-
     public void spwnEnemy() {
         int spwnEnemyNumber = Random.Range(0, prefabsEnemys.Length);
         EnemyController enemyController = prefabsEnemys[spwnEnemyNumber].GetComponent<EnemyController>();
