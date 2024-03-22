@@ -2547,6 +2547,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 311378325}
   m_CullTransparentMesh: 1
+--- !u!1 &332366223 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2097156947464613900, guid: e59b833331baa9e44adabcec7db8a3f1, type: 3}
+  m_PrefabInstance: {fileID: 1500791528}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &332366224 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2097156947464613901, guid: e59b833331baa9e44adabcec7db8a3f1, type: 3}
@@ -10019,6 +10024,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyCreator: {fileID: 847022186}
+  backgroundAnimation: {fileID: 332366223}
   isSNSMode: 0
   isUnderBlowUp: 0
 --- !u!1 &1224384338
@@ -12606,6 +12612,7 @@ MonoBehaviour:
   playerAnimator: {fileID: 1572783227}
   blowUpSlider: {fileID: 1218606067}
   blowUpSliderController: {fileID: 0}
+  logText: {fileID: 0}
   playerAudioSource: {fileID: 1572783232}
   playerLevelUpAudioSource: {fileID: 1572783233}
   attackSE: {fileID: 8300000, guid: c79e8862ef8724675b04d35c72a35bf5, type: 3}
