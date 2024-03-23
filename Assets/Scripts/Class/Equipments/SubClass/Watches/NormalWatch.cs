@@ -8,6 +8,7 @@ public class NormalWatch : Watch
 
     public static NormalWatch Current => normalWatch;
     private NormalWatch() {
+        name = "普通の時計";
         hp = 1;
         intelligence = 1;
     }

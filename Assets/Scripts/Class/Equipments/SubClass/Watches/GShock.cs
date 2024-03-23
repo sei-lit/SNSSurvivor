@@ -8,6 +8,7 @@ public class GShock : Watch
 
     public static GShock Current => gShock;
     private GShock() {
+        name = "G-SHOCK";
         hp = 1;
         intelligence = 1;
     }

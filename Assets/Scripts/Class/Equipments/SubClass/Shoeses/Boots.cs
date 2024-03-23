@@ -8,6 +8,7 @@ public class Boots : Shoes
 
     public static Boots Current => boots;
     private Boots() {
+        name = "ブーツ";
         assets = 1;
         endurance = 1;
     }

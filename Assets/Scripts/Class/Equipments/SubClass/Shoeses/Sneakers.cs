@@ -8,6 +8,7 @@ public class Sneakers : Shoes
 
     public static Sneakers Current => sneakers;
     private Sneakers() {
+        name = "ただのスニーカー";
         assets = 1;
         endurance = 1;
     }

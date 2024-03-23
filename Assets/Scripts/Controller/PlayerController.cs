@@ -125,7 +125,7 @@ public class PlayerController : MonoBehaviour
 
     bool IsDropItem() {
         int randomNumber = new System.Random().Next(100);
-        if(randomNumber < 2) {
+        if(randomNumber < 100) {
             return true;
         } else {
             return false;
@@ -146,8 +146,9 @@ public class PlayerController : MonoBehaviour
                 if(pencil.isAquired) {
                     Debug.Log("Pencil has already gotten");
                 } else {
-                    pencil.isAquired = true;
+                    pencil.GetEquipment();
                     logText.text = "鉛筆を手に入れた！";
+                    player.aquiredTool.Add(pencil);
                     Debug.Log("You got pencil!");
                 }
                 return;
@@ -156,8 +157,9 @@ public class PlayerController : MonoBehaviour
                 if(book.isAquired) {
                     Debug.Log("Book has already gotten");
                 } else {
-                    book.isAquired = true;
+                    book.GetEquipment();
                     logText.text = "本を手に入れた！";
+                    player.aquiredTool.Add(book);
                     Debug.Log("You got book!");
                 }
                 return;
@@ -166,8 +168,9 @@ public class PlayerController : MonoBehaviour
                 if(pen.isAquired) {
                     Debug.Log("Pen has already gotten");
                 } else {
-                    pen.isAquired = true;
+                    pen.GetEquipment();
                     logText.text = "ペンを手に入れた！";
+                    player.aquiredTool.Add(pen);
                     Debug.Log("You got pen!");
                 }
                 return;
@@ -176,8 +179,9 @@ public class PlayerController : MonoBehaviour
                 if(markerPen.isAquired) {
                     Debug.Log("MarkerPen has already gotten");
                 } else {
-                    markerPen.isAquired = true;
+                    markerPen.GetEquipment();
                     logText.text = "マーカーペンを手に入れた！";
+                    player.aquiredTool.Add(markerPen);
                     Debug.Log("You got markerpen!");
                 }
                 return;
@@ -195,8 +199,9 @@ public class PlayerController : MonoBehaviour
                 if(usedOutfit.isAquired) {
                     Debug.Log("UsedOutfit has already gotten");
                 } else {
-                    usedOutfit.isAquired = true;
+                    usedOutfit.GetEquipment();
                     logText.text = "古着を手に入れた！";
+                    player.aquiredBody.Add(usedOutfit);
                     Debug.Log("You got usedOutfit!");
                 }
                 return;
@@ -205,8 +210,9 @@ public class PlayerController : MonoBehaviour
                 if(tShirt.isAquired) {
                     Debug.Log("TShirt has already gotten");
                 } else {
-                    tShirt.isAquired = true;
+                    tShirt.GetEquipment();
                     logText.text = "Tシャツを手に入れた！";
+                    player.aquiredBody.Add(tShirt);
                     Debug.Log("You got tShirt!");
                 }
                 return;
@@ -215,8 +221,9 @@ public class PlayerController : MonoBehaviour
                 if(hoodie.isAquired) {
                     Debug.Log("Hoodie has already gotten");
                 } else {
-                    hoodie.isAquired = true;
+                    hoodie.GetEquipment();
                     logText.text = "パーカーを手に入れた！";
+                    player.aquiredBody.Add(hoodie);
                     Debug.Log("You got hoodie!");
                 }
                 return;
@@ -225,8 +232,9 @@ public class PlayerController : MonoBehaviour
                 if(uniqlo.isAquired) {
                     Debug.Log("Uniqlo has already gotten");
                 } else {
-                    uniqlo.isAquired = true;
+                    uniqlo.GetEquipment();
                     logText.text = "UNIQLOの服を手に入れた！";
+                    player.aquiredBody.Add(uniqlo);
                     Debug.Log("You got uniqlo!");
                 }
                 return;
@@ -244,8 +252,9 @@ public class PlayerController : MonoBehaviour
                 if(rustedRing.isAquired) {
                     Debug.Log("RustedRing has already gotten");
                 } else {
-                    rustedRing.isAquired = true;
+                    rustedRing.GetEquipment();
                     logText.text = "錆びた指輪を手に入れた！";
+                    player.aquiredAccesory.Add(rustedRing);
                     Debug.Log("You got rustedRing!");
                 }
                 return;
@@ -254,8 +263,9 @@ public class PlayerController : MonoBehaviour
                 if(silverRing.isAquired) {
                     Debug.Log("SilverRing has already gotten");
                 } else {
-                    silverRing.isAquired = true;
+                    silverRing.GetEquipment();
                     logText.text = "銀の指輪を手に入れた！";
+                    player.aquiredAccesory.Add(silverRing);
                     Debug.Log("You got silverRing!");
                 }
                 return;
@@ -264,8 +274,9 @@ public class PlayerController : MonoBehaviour
                 if(goldRing.isAquired) {
                     Debug.Log("GoldRing has already gotten");
                 } else {
-                    goldRing.isAquired = true;
+                    goldRing.GetEquipment();
                     logText.text = "金の指輪を手に入れた！";
+                    player.aquiredAccesory.Add(goldRing);
                     Debug.Log("You got GoldRing!");
                 }
                 return;
@@ -274,8 +285,9 @@ public class PlayerController : MonoBehaviour
                 if(oldNecklace.isAquired) {
                     Debug.Log("OldNecklace has already gotten");
                 } else {
-                    oldNecklace.isAquired = true;
+                    oldNecklace.GetEquipment();
                     logText.text = "古びたネックレスを手に入れた！";
+                    player.aquiredAccesory.Add(oldNecklace);
                     Debug.Log("You got oldNecklace!");
                 }
                 return;
@@ -284,8 +296,9 @@ public class PlayerController : MonoBehaviour
                 if(silverChain.isAquired) {
                     Debug.Log("SilverChain has already gotten");
                 } else {
-                    silverChain.isAquired = true;
+                    silverChain.GetEquipment();
                     logText.text = "シルバーチェーンを手に入れた！";
+                    player.aquiredAccesory.Add(silverChain);
                     Debug.Log("You got silverChain!");
                 }
                 return;
@@ -303,8 +316,9 @@ public class PlayerController : MonoBehaviour
                 if(oldWatch.isAquired) {
                     Debug.Log("OldWatch has already gotten");
                 } else {
-                    oldWatch.isAquired = true;
+                    oldWatch.GetEquipment();
                     logText.text = "古い時計を手に入れた！";
+                    player.aquiredWatch.Add(oldWatch);
                     Debug.Log("You got oldWatch!");
                 }
                 return;
@@ -313,8 +327,9 @@ public class PlayerController : MonoBehaviour
                 if(normalWatch.isAquired) {
                     Debug.Log("NormalWatch has already gotten");
                 } else {
-                    normalWatch.isAquired = true;
+                    normalWatch.GetEquipment();
                     logText.text = "普通の時計を手に入れた！";
+                    player.aquiredWatch.Add(normalWatch);
                     Debug.Log("You got normalWatch!");
                 }
                 return;
@@ -323,8 +338,9 @@ public class PlayerController : MonoBehaviour
                 if(gShock.isAquired) {
                     Debug.Log("GShock has already gotten");
                 } else {
-                    gShock.isAquired = true;
+                    gShock.GetEquipment();
                     logText.text = "G-SHOCKを手に入れた！";
+                    player.aquiredWatch.Add(gShock);
                     Debug.Log("You got gShock!");
                 }
                 return;
@@ -333,8 +349,9 @@ public class PlayerController : MonoBehaviour
                 if(rolex.isAquired) {
                     Debug.Log("Rolex has already gotten");
                 } else {
-                    rolex.isAquired = true;
+                    rolex.GetEquipment();
                     logText.text = "ロレックスを手に入れた！";
+                    player.aquiredWatch.Add(rolex);
                     Debug.Log("You got rolex!");
                 }
                 return;
@@ -352,8 +369,9 @@ public class PlayerController : MonoBehaviour
                 if(sneakers.isAquired) {
                     Debug.Log("Sneakers has already gotten");
                 } else {
-                    sneakers.isAquired = true;
+                    sneakers.GetEquipment();
                     logText.text = "ただのスニーカーを手に入れた！";
+                    player.aquiredShoes.Add(sneakers);
                     Debug.Log("You got sneakers!");
                 }
                 return;
@@ -362,8 +380,9 @@ public class PlayerController : MonoBehaviour
                 if(boots.isAquired) {
                     Debug.Log("Boots has already gotten");
                 } else {
-                    boots.isAquired = true;
+                    boots.GetEquipment();
                     logText.text = "ブーツを手に入れた！";
+                    player.aquiredShoes.Add(boots);
                     Debug.Log("You got boots!");
                 }
                 return;

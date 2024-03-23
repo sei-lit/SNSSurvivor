@@ -8,6 +8,7 @@ public class OldWatch : Watch
 
     public static OldWatch Current => oldWatch;
     private OldWatch() {
+        name = "古い時計";
         hp = 1;
         intelligence = 1;
     }

@@ -8,6 +8,7 @@ public class SilverChain : Accesory
 
     public static SilverChain Current => silverChain;
     private SilverChain() {
+        name = "シルバーチェーン";
         hp = 3;
         intelligence = 3;
         assets = 5;

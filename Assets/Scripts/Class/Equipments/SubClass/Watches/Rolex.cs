@@ -8,6 +8,7 @@ public class Rolex : Watch
 
     public static Rolex Current => rolex;
     private Rolex() {
+        name = "ロレックス";
         hp = 1;
         intelligence = 1;
     }

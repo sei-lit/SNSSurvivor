@@ -8,6 +8,7 @@ public class TShirt : Body
 
     public static TShirt Current => tShirt;
     private TShirt() {
+        name = "Tシャツ";
         hp = 3;
         endurance = 1;
     }

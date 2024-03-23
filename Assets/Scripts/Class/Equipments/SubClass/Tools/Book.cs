@@ -8,6 +8,7 @@ public class Book : Tool
 
     public static Book Current => book;
     private Book() {
+        name = "本";
         assets = 1;
         intelligence = 1;
     }

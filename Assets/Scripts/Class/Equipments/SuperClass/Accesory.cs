@@ -9,4 +9,5 @@ public class Accesory : Equipment
     public float? assets;
     public float? endurance;
     public int? hp;
+    public string name;
 }

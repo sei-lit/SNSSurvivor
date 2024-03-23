@@ -47,16 +47,16 @@ public class Player : Chatacter, ILevelUpable
     }
 
     private void getCurrentEquipments() {
-        aquiredTool.Add(tool);
+        
     }
 
     private void getInitialEquipments() {
-        tool.isAquired = true;
-        body.isAquired = true;
-        shoes.isAquired = true;
-        tool.isEquiped = true;
-        body.isEquiped = true;
-        shoes.isEquiped = true;
+        tool.GetEquipment();
+        body.GetEquipment();
+        shoes.GetEquipment();
+        aquiredTool.Add(tool);
+        aquiredBody.Add(body);
+        aquiredShoes.Add(shoes);
     }
 
     public void UpdateStatus() {

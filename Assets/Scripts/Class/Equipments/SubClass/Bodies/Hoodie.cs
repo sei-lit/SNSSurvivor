@@ -8,6 +8,7 @@ public class Hoodie : Body
 
     public static Hoodie Current => hoodie;
     private Hoodie() {
+        name = "パーカー";
         hp = 3;
         endurance = 1;
     }

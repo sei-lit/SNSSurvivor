@@ -8,6 +8,7 @@ public class MarkerPen : Tool
 
     public static MarkerPen Current => markerPen;
     private MarkerPen() {
+        name = "マーカーペン";
         assets = 1;
         intelligence = 1;
     }

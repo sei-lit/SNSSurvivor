@@ -8,6 +8,7 @@ public class Pencil : Tool
 
     public static Pencil Current => pencil;
     private Pencil() {
+        name = "鉛筆";
         assets = 1;
         intelligence = 1;
     }

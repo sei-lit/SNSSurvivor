@@ -8,6 +8,7 @@ public class Uniqlo : Body
 
     public static Uniqlo Current => uniqlo;
     private Uniqlo() {
+        name = "UNIQLOの服";
         hp = 3;
         endurance = 1;
     }

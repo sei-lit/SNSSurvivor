@@ -2252,7 +2252,7 @@ GameObject:
   - component: {fileID: 241327852}
   - component: {fileID: 241327855}
   - component: {fileID: 241327854}
-  - component: {fileID: 241327853}
+  - component: {fileID: 241327856}
   m_Layer: 6
   m_Name: ChangeBodyPanel
   m_TagString: Untagged
@@ -2283,23 +2283,6 @@ RectTransform:
   m_AnchoredPosition: {x: 194, y: -294.226}
   m_SizeDelta: {x: -443.5732, y: -1025.614}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &241327853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 241327851}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24e8651f7fef54616aa4e647a2f8aa79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  changeToolPanel: {fileID: 0}
-  changeBodyPanel: {fileID: 0}
-  changeWatchPanel: {fileID: 0}
-  changeAccesoryPanel: {fileID: 0}
-  changeShoesPanel: {fileID: 0}
 --- !u!114 &241327854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2338,6 +2321,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 241327851}
   m_CullTransparentMesh: 1
+--- !u!114 &241327856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241327851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e5a6d654bba40eea3b92db6298128d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toolText: {fileID: 0}
+  bodyText: {fileID: 196404931}
+  accesoryText: {fileID: 0}
+  watchText: {fileID: 0}
+  shoesText: {fileID: 0}
+  changeEquipmentsPanel: {fileID: 0}
+  equipmentPrefab: {fileID: 5639340230421980952, guid: deb64a7c23a6e496dad8f6c674f2628f, type: 3}
 --- !u!1 &292003271
 GameObject:
   m_ObjectHideFlags: 0
@@ -2469,6 +2471,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7901e6fa112ff4da5bdfcd71f84942e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toolText: {fileID: 896988268}
+  bodyText: {fileID: 1242553031}
+  accesoryText: {fileID: 904825206}
+  watchText: {fileID: 1492055431}
+  shoesText: {fileID: 1625402317}
   changeEquipmentsPanel: {fileID: 1966783290}
 --- !u!1 &311378325
 GameObject:
@@ -3259,7 +3266,7 @@ GameObject:
   - component: {fileID: 424976928}
   - component: {fileID: 424976931}
   - component: {fileID: 424976930}
-  - component: {fileID: 424976929}
+  - component: {fileID: 424976932}
   m_Layer: 6
   m_Name: ChangeWatchPanel
   m_TagString: Untagged
@@ -3290,23 +3297,6 @@ RectTransform:
   m_AnchoredPosition: {x: 194, y: -294.226}
   m_SizeDelta: {x: -443.5732, y: -1025.614}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &424976929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 424976927}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24e8651f7fef54616aa4e647a2f8aa79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  changeToolPanel: {fileID: 0}
-  changeBodyPanel: {fileID: 0}
-  changeWatchPanel: {fileID: 0}
-  changeAccesoryPanel: {fileID: 0}
-  changeShoesPanel: {fileID: 0}
 --- !u!114 &424976930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3345,6 +3335,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 424976927}
   m_CullTransparentMesh: 1
+--- !u!114 &424976932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424976927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7500d64fd3622460887639ffb0b32930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toolText: {fileID: 0}
+  bodyText: {fileID: 0}
+  accesoryText: {fileID: 0}
+  watchText: {fileID: 163664524}
+  shoesText: {fileID: 0}
+  changeEquipmentsPanel: {fileID: 0}
+  equipmentPrefab: {fileID: 5639340230421980952, guid: deb64a7c23a6e496dad8f6c674f2628f, type: 3}
 --- !u!1 &436397757
 GameObject:
   m_ObjectHideFlags: 0
@@ -3748,8 +3757,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 866363882}
-        m_TargetAssemblyTypeName: ChangeEquipmentsPanelController, Assembly-CSharp
+      - m_Target: {fileID: 866363885}
+        m_TargetAssemblyTypeName: EquipmentsPanelController, Assembly-CSharp
         m_MethodName: CloseThisPanel
         m_Mode: 1
         m_Arguments:
@@ -4283,7 +4292,7 @@ GameObject:
   - component: {fileID: 539796548}
   - component: {fileID: 539796551}
   - component: {fileID: 539796550}
-  - component: {fileID: 539796549}
+  - component: {fileID: 539796552}
   m_Layer: 6
   m_Name: ChangeToolPanel
   m_TagString: Untagged
@@ -4314,23 +4323,6 @@ RectTransform:
   m_AnchoredPosition: {x: 194, y: -294.226}
   m_SizeDelta: {x: -443.5732, y: -1025.614}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &539796549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 539796547}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24e8651f7fef54616aa4e647a2f8aa79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  changeToolPanel: {fileID: 0}
-  changeBodyPanel: {fileID: 0}
-  changeWatchPanel: {fileID: 0}
-  changeAccesoryPanel: {fileID: 0}
-  changeShoesPanel: {fileID: 0}
 --- !u!114 &539796550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4369,6 +4361,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 539796547}
   m_CullTransparentMesh: 1
+--- !u!114 &539796552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539796547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f807d3eabb524b2da345ad47c893064, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toolText: {fileID: 1447579014}
+  bodyText: {fileID: 0}
+  accesoryText: {fileID: 0}
+  watchText: {fileID: 0}
+  shoesText: {fileID: 0}
+  changeEquipmentsPanel: {fileID: 0}
+  equipmentPrefab: {fileID: 5639340230421980952, guid: deb64a7c23a6e496dad8f6c674f2628f, type: 3}
 --- !u!1 &542898075
 GameObject:
   m_ObjectHideFlags: 0
@@ -6757,7 +6768,7 @@ GameObject:
   - component: {fileID: 866363881}
   - component: {fileID: 866363884}
   - component: {fileID: 866363883}
-  - component: {fileID: 866363882}
+  - component: {fileID: 866363885}
   m_Layer: 6
   m_Name: ChangeShoesPanel
   m_TagString: Untagged
@@ -6788,23 +6799,6 @@ RectTransform:
   m_AnchoredPosition: {x: 194, y: -294.226}
   m_SizeDelta: {x: -443.5732, y: -1025.614}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &866363882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 866363880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24e8651f7fef54616aa4e647a2f8aa79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  changeToolPanel: {fileID: 0}
-  changeBodyPanel: {fileID: 0}
-  changeWatchPanel: {fileID: 0}
-  changeAccesoryPanel: {fileID: 0}
-  changeShoesPanel: {fileID: 0}
 --- !u!114 &866363883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6843,6 +6837,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 866363880}
   m_CullTransparentMesh: 1
+--- !u!114 &866363885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866363880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ba2dcd77173746a289cf7bf6089e11f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toolText: {fileID: 0}
+  bodyText: {fileID: 0}
+  accesoryText: {fileID: 0}
+  watchText: {fileID: 0}
+  shoesText: {fileID: 1210585008}
+  changeEquipmentsPanel: {fileID: 0}
+  equipmentPrefab: {fileID: 5639340230421980952, guid: deb64a7c23a6e496dad8f6c674f2628f, type: 3}
 --- !u!1 &877642645
 GameObject:
   m_ObjectHideFlags: 0
@@ -8200,8 +8213,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 241327853}
-        m_TargetAssemblyTypeName: ChangeEquipmentsPanelController, Assembly-CSharp
+      - m_Target: {fileID: 241327856}
+        m_TargetAssemblyTypeName: EquipmentsPanelController, Assembly-CSharp
         m_MethodName: CloseThisPanel
         m_Mode: 1
         m_Arguments:
@@ -8644,8 +8657,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1478838080}
-        m_TargetAssemblyTypeName: ChangeEquipmentsPanelController, Assembly-CSharp
+      - m_Target: {fileID: 1478838083}
+        m_TargetAssemblyTypeName: EquipmentsPanelController, Assembly-CSharp
         m_MethodName: CloseThisPanel
         m_Mode: 1
         m_Arguments:
@@ -10547,8 +10560,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 539796549}
-        m_TargetAssemblyTypeName: ChangeEquipmentsPanelController, Assembly-CSharp
+      - m_Target: {fileID: 539796552}
+        m_TargetAssemblyTypeName: EquipmentsPanelController, Assembly-CSharp
         m_MethodName: CloseThisPanel
         m_Mode: 1
         m_Arguments:
@@ -11713,7 +11726,7 @@ GameObject:
   - component: {fileID: 1478838079}
   - component: {fileID: 1478838082}
   - component: {fileID: 1478838081}
-  - component: {fileID: 1478838080}
+  - component: {fileID: 1478838083}
   m_Layer: 6
   m_Name: ChangeAccesoryPanel
   m_TagString: Untagged
@@ -11744,23 +11757,6 @@ RectTransform:
   m_AnchoredPosition: {x: 194, y: -294.226}
   m_SizeDelta: {x: -443.5732, y: -1025.614}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1478838080
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1478838078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24e8651f7fef54616aa4e647a2f8aa79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  changeToolPanel: {fileID: 0}
-  changeBodyPanel: {fileID: 0}
-  changeWatchPanel: {fileID: 0}
-  changeAccesoryPanel: {fileID: 0}
-  changeShoesPanel: {fileID: 0}
 --- !u!114 &1478838081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11799,6 +11795,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1478838078}
   m_CullTransparentMesh: 1
+--- !u!114 &1478838083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478838078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 672d2800dfef9491f8cefe19b7ca7fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toolText: {fileID: 0}
+  bodyText: {fileID: 0}
+  accesoryText: {fileID: 1137992908}
+  watchText: {fileID: 0}
+  shoesText: {fileID: 0}
+  changeEquipmentsPanel: {fileID: 0}
+  equipmentPrefab: {fileID: 5639340230421980952, guid: deb64a7c23a6e496dad8f6c674f2628f, type: 3}
 --- !u!1 &1486564808
 GameObject:
   m_ObjectHideFlags: 0
@@ -12612,7 +12627,7 @@ MonoBehaviour:
   playerAnimator: {fileID: 1572783227}
   blowUpSlider: {fileID: 1218606067}
   blowUpSliderController: {fileID: 0}
-  logText: {fileID: 0}
+  logText: {fileID: 1111138295}
   playerAudioSource: {fileID: 1572783232}
   playerLevelUpAudioSource: {fileID: 1572783233}
   attackSE: {fileID: 8300000, guid: c79e8862ef8724675b04d35c72a35bf5, type: 3}
@@ -16042,8 +16057,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 424976929}
-        m_TargetAssemblyTypeName: ChangeEquipmentsPanelController, Assembly-CSharp
+      - m_Target: {fileID: 424976932}
+        m_TargetAssemblyTypeName: EquipmentsPanelController, Assembly-CSharp
         m_MethodName: CloseThisPanel
         m_Mode: 1
         m_Arguments:
@@ -16263,6 +16278,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e8651f7fef54616aa4e647a2f8aa79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toolText: {fileID: 1621969427}
+  bodyText: {fileID: 1909338236}
+  accesoryText: {fileID: 788463292}
+  watchText: {fileID: 512180051}
+  shoesText: {fileID: 1775293040}
+  changeEquipmentsPanel: {fileID: 0}
   changeToolPanel: {fileID: 539796547}
   changeBodyPanel: {fileID: 241327851}
   changeWatchPanel: {fileID: 424976927}

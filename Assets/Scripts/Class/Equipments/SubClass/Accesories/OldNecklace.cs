@@ -8,6 +8,7 @@ public class OldNecklace : Accesory
 
     public static OldNecklace Current => oldNecklace;
     private OldNecklace() {
+        name = "古いネックレス";
         hp = 3;
         intelligence = 3;
         assets = 5;

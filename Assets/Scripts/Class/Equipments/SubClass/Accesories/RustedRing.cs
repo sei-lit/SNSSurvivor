@@ -8,6 +8,7 @@ public class RustedRing : Accesory
 
     public static RustedRing Current => rustedRing;
     private RustedRing() {
+        name = "錆びた指輪";
         hp = 3;
         intelligence = 3;
         assets = 5;

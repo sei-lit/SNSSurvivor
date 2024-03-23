@@ -8,6 +8,7 @@ public class GoldRing : Accesory
 
     public static GoldRing Current => goldRing;
     private GoldRing() {
+        name = "金の指輪";
         hp = 3;
         intelligence = 3;
         assets = 5;
